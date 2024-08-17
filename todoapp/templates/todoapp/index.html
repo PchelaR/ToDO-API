@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Эндпоинты ToDO API{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+        <img src="{% static 'svg/ToDO_logo.svg' %}" alt="ToDo Logo" width="48" height="48">
+        <h1 class="ms-3">Эндпоинты ToDo API</h1>
+    </header>
+
+    <main>
+        <p class="fs-5 mb-4">Это API приложение предназначено для управления задачами. Оно позволяет пользователям создавать, читать, обновлять и удалять задачи, а также управлять аутентификацией и регистрацией пользователей.</p>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-body-emphasis mb-4">Доступные эндпоинты</h2>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Все эндпоинты (JSON)</h5>
+                                <p class="card-text">
+                                    <strong>/api/v1/</strong> — Получение всех доступных эндпоинтов в формате JSON.
+                                </p>
+                                <a href="/api/v1/" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Список задач</h5>
+                                <p class="card-text">
+                                    <strong>/api/v1/todo/</strong> — Получение списка всех задач.
+                                </p>
+                                <a href="/api/v1/todo/" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Детали задачи</h5>
+                                <p class="card-text">
+                                    <strong>/api/v1/todo/{id}/</strong> — Получение деталей конкретной задачи по ID.
+                                </p>
+                                <a href="/api/v1/todo/{id}/" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Регистрация</h5>
+                                <p class="card-text">
+                                    <strong>/api/v1/register/</strong> — Регистрация нового пользователя.
+                                </p>
+                                <a href="/api/v1/register/" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Вход</h5>
+                                <p class="card-text">
+                                    <strong>/api/v1/todo-auth/login/</strong> — Вход в систему.
+                                </p>
+                                <a href="/api/v1/todo-auth/login/" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Выход</h5>
+                                <p class="card-text">
+                                    <strong>/api/v1/todo-auth/logout/</strong> — Выход из системы.
+                                </p>
+                                <a href="/api/v1/todo-auth/logout/" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2 class="text-body-emphasis mb-4">Как управлять задачами</h2>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <h5 class="card-title">Изменение задачи</h5>
+                                <p class="card-text">
+                                    Для изменения задачи используйте эндпоинт <strong>/api/v1/todo/{id}/</strong> с методом PUT. Передайте обновленные данные задачи в теле запроса.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-danger">
+                            <div class="card-body">
+                                <h5 class="card-title">Удаление задачи</h5>
+                                <p class="card-text">
+                                    Для удаления задачи используйте эндпоинт <strong>/api/v1/todo/{id}/</strong> с методом DELETE. Задача будет удалена по указанному ID.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pt-4 mt-5 border-top text-center">
+    </footer>
+</div>
+{% endblock %}
+
+
